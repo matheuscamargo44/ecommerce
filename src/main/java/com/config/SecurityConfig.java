@@ -33,4 +33,11 @@ public class SecurityConfig {
     // Retorna o objeto de configuração montado
     return http.build();
     }
+    @Bean
+    public PassowordEncoder passwordEncoder() {
+
+        // Retorna a implementação BCrypt, que é o padrão seguro para senhas.
+        return new BCryptPasswordEncoder();
+    }
+
 }
