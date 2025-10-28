@@ -1,3 +1,5 @@
+package com.camargo.ecommerce.service;
+
 import com.camargo.ecommerce.model.Order;
 import com.camargo.ecommerce.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
