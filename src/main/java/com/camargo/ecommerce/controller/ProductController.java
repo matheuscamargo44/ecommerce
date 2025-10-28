@@ -5,6 +5,7 @@ import com.camargo.ecommerce.service.ProductService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
 
 @RestController
 @RequestMapping("/api/products")
@@ -53,5 +54,6 @@ public class ProductController {
     public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {
         productService.findById(id);
         productService.deleteById(id);
+        return ResponseEntity.ok().build();
     }
 }
