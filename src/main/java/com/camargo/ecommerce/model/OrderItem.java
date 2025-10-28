@@ -2,7 +2,6 @@ package com.camargo.ecommerce.model;
 
 import jakarta.persistence.*; // Importante.
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

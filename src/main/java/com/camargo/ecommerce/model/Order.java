@@ -22,12 +22,13 @@ public class Order {
 
     // Muitos pedidos se referem a um único usuário.
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
     private BigDecimal totalValue;
 
     private LocalDateTime orderDate;
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<OrderItem> items;
 }
