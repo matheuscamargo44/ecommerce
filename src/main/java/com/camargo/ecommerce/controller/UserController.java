@@ -1,5 +1,7 @@
 package com.camargo.ecommerce.controller;
 
+import com.camargo.ecommerce.dto.LoginRequest;
+import com.camargo.ecommerce.dto.LoginResponse;
 import com.camargo.ecommerce.model.User;
 import com.camargo.ecommerce.service.UserService;
 import org.springframework.web.bind.annotation.*;
@@ -12,9 +14,14 @@ public class UserController {
     @Autowired
     private UserService userService;
     
-    @PostMapping
-    public User signIn(@RequestBody LoginRequest loginRequest){
-        loadUserByUsername();
-        return 
+    @PostMapping("/login")
+    public LoginResponse login(@RequestBody LoginRequest loginRequest){
+        // Implementar lógica de login aqui
+        return new LoginResponse();
+    }
+    
+    @PostMapping("/register")
+    public User register(@RequestBody User user){
+        return userService.save(user);
     }
 }
